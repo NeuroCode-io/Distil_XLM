@@ -5,7 +5,7 @@ from torch import nn
 import transformers
 
 
-class DistilbertStudentModel(nn.Module):
+class DistilbertStudentModel(nn.Modulcde):
     """
     DistilbertStudentModel
 
@@ -16,7 +16,7 @@ class DistilbertStudentModel(nn.Module):
 
     def __init__(
         self,
-        teacher_model_name: str = "bert-base-uncased",
+        teacher_model_name: str = "bert-base-multilingual-uncased",
         layers: List[int] = None,
         extract: bool = True,
     ):
@@ -47,17 +47,6 @@ class DistilbertStudentModel(nn.Module):
             )
             self.student = transformers.DistilBertForMaskedLM.from_pretrained(
                 "distilbert-base-uncased",
-                config=student_config,
-                state_dict=distil_sd,
-            )
-        elif teacher_model_name == "bert-base-cased":
-            student_config = transformers.AutoConfig.from_pretrained(
-                "distilbert-base-cased",
-                output_hidden_states=True,
-                output_logits=True,
-            )
-            self.student = transformers.DistilBertForMaskedLM.from_pretrained(
-                "distilbert-base-cased",
                 config=student_config,
                 state_dict=distil_sd,
             )

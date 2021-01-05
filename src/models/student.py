@@ -5,7 +5,7 @@ from torch import nn
 import transformers
 
 
-class DistilbertStudentModel(nn.Modulcde):
+class DistilbertStudentModel(nn.Module):
     """
     DistilbertStudentModel
 

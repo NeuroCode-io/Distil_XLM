@@ -6,8 +6,6 @@ authors = ["elenacramer <elenascramer@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-alchemy-catalyst = "^20.3"
-catalyst = "20.6"
 transformers = "^4.1.1"
 reaction = "^20.2"
 torch-optimizer = "^0.1.0"

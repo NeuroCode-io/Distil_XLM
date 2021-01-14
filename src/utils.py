@@ -1,6 +1,7 @@
 import random
 import torch
 import os
+import numpy as np
 
 TRAIN_TEST_RATIO = 0.2
 ROOT_DATA_PATH = '../data/SST-2'
